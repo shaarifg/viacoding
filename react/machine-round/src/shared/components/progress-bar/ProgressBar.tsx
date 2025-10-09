@@ -1,22 +1,31 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function ProgressBar({
+type ProgressBarProps = {
   /** External value (controlled). If null → component manages itself */
-  value: controlledValue = null,
+  value?: number | null;
   /** Step size (self-managed mode) */
-  step = 10,
+  step?: number;
   /** Interval in ms (self-managed mode) */
-  interval = 1000,
+  interval?: number;
   /** Max value */
-  max = 100,
+  max?: number;
   /** Callback when finished */
-  onComplete,
+  onComplete?: () => void;
   /** Promise or async task to track (optional) */
+  taskPromise?: Promise<unknown> | null;
+};
+
+ const ProgressBar:React.FC =({
+  value: controlledValue = null,
+  step = 10,
+  interval = 1000,
+  max = 100,
+  onComplete,
   taskPromise = null,
-}) {
-  const [internalValue, setInternalValue] = useState(0);
+}: ProgressBarProps)=> {
+  const [internalValue, setInternalValue] = useState<number>(0);
   const isControlled = controlledValue !== null;
-  const value = isControlled ? controlledValue : internalValue;
+  const value = isControlled ? controlledValue! : internalValue;
 
   // ─────────────── Self-managed mode ───────────────
   useEffect(() => {
@@ -38,7 +47,6 @@ export default function ProgressBar({
     if (!taskPromise) return;
 
     let active = true;
-    // Simulate progress updates while task runs
     const tick = () => {
       setInternalValue((prev) => Math.min(prev + step, max - 1));
     };
@@ -47,8 +55,8 @@ export default function ProgressBar({
     taskPromise.finally(() => {
       if (!active) return;
       clearInterval(timer);
-      setInternalValue(max); // jump to full
-      if (onComplete) onComplete();
+      setInternalValue(max);
+      onComplete?.();
     });
 
     return () => {
@@ -71,3 +79,5 @@ export default function ProgressBar({
     </div>
   );
 }
+
+export default ProgressBar
