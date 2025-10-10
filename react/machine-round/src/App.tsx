@@ -1,16 +1,7 @@
-import React from "react";
-import Todo from "./apps/todo/Todo";
-import Slider from "./shared/components/slider/Slider";
-import ProgressBar from "./shared/components/progress-bar/ProgressBar";
+import { AppRouter } from "./routes/AppRouter";
 
 function App() {
-  return (
-    <React.Fragment>
-      <ProgressBar />
-      <Slider />
-      <Todo />
-    </React.Fragment>
-  );
+     return <AppRouter />;
 }
 
 export default App;
