@@ -2,7 +2,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "@/modules/pages/dashboard/Dashboard";
 import NoAuthGuard from "@/core/guards/NoAuthGuard";
 import AuthGuard from "@/core/guards/AuthGuard";
-import { authRoutes } from "./modules/auth/auth.routes";
+import { AuthRoutes } from "@/modules/auth/AuthRoutes";
+import { AppsRoutes } from "@/modules/apps/AppsRoutes";
+
 
 const router = createBrowserRouter([
     // home page
@@ -12,9 +14,13 @@ const router = createBrowserRouter([
     // children: 'I am Home Page',
   },
   {
+    path: "apps",
+    children: AppsRoutes,
+  },
+  {
     path: "auth",
     element: <NoAuthGuard />,
-    children: authRoutes,
+    children: AuthRoutes,
   },
   {
     path: "dashboard",
