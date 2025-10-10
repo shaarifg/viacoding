@@ -1,4 +1,4 @@
-import { useAuth } from "@/core/guards/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
