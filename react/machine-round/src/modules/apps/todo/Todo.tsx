@@ -1,5 +1,4 @@
 import React, { useState, FormEvent } from "react";
-import "./Todo.css";
 
 const Todo: React.FC = () => {
   // State type → array of strings
