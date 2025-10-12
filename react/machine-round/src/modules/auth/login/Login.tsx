@@ -13,7 +13,7 @@ const Login = () => {
       <h2 className="text-2xl mb-4 font-bold">Login Page</h2>
       <button
         onClick={handleLogin}
-        className="bg-blue-600 text-white px-4 py-2 rounded"
+        className="bg-primary-600 text-white px-4 py-2 rounded"
       >
         Sign In
       </button>
