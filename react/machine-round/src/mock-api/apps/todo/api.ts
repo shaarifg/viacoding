@@ -1,33 +1,25 @@
-import { todos } from "./../../../../../../data/apps/todo/todo";
+import { todosData } from "./../../../../../../data/apps/todo/data";
 
-const simulateNetworkDelay = (ms = 800) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
+let todos = structuredClone(todosData);
 
-export const mockApi = {
+export const todoMockApi = {
   async getTodos() {
-    await simulateNetworkDelay();
-    return { data: todos };
+    await new Promise((r) => setTimeout(r, 300)); // fake delay
+    return structuredClone(todos);
   },
-
-  async getTodoById(id: number) {
-    await simulateNetworkDelay();
-    const todo = todos.find((t) => t.id === id);
-    if (!todo) throw new Error("Todo not found");
-    return { data: todo };
-  },
-
   async addTodo(title: string) {
-    await simulateNetworkDelay();
     const newTodo = { id: Date.now(), title, completed: false };
     todos.push(newTodo);
-    return { data: newTodo };
+    return newTodo;
   },
-
+  async toggleTodo(id: number) {
+    const todo = todos.find((t) => t.id === id);
+    if (todo) todo.completed = !todo.completed;
+    return todo;
+  },
   async deleteTodo(id: number) {
-    await simulateNetworkDelay();
-    const index = todos.findIndex((t) => t.id === id);
-    if (index === -1) throw new Error("Todo not found");
-    todos.splice(index, 1);
-    return { data: true };
+    await new Promise((r) => setTimeout(r, 3000));
+    todos = todos.filter((t) => t.id !== id);
+    return true;
   },
 };

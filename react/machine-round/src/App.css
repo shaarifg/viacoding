@@ -3,12 +3,17 @@
 @theme {
   --font-display: "Satoshi", "sans-serif";
   --breakpoint-3xl: 120rem;
-  --color-primary: #fff;
-  --color-primary-200: oklch(0.98 0.04 113.22);
-  --color-primary-300: oklch(0.94 0.11 115.03);
-  --color-primary-400: oklch(0.92 0.19 114.08);
-  --color-primary-500: oklch(0.84 0.18 117.33);
-  --color-primary-600: oklch(0.53 0.12 118.34);
+  --color-primary: #ea483c;
+  --color-primary-50: #f4a39d;
+  --color-primary-100: #f2918a;
+  --color-primary-200: #f07e76;
+  --color-primary-300: #ee6c62;
+  --color-primary-400: #ec5a4f;
+  --color-primary-500: #ea483c;
+  --color-primary-600: #d24036;
+  --color-primary-700: #bb3930;
+  --color-primary-800: #a3322a;
+  --color-primary-900: #8c2b24;
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 }
