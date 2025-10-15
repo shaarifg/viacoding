@@ -73,3 +73,41 @@ As an expert document contributor, this file organizes key technical questions f
 21. **Create a parent box, then display 3 boxes diagonally inside it.**
     _(This is a CSS/layout implementation question)_
     [View Solution](YOUR_URL_HERE)
+
+---
+
+## **Practical Implementation and Custom Hooks**
+
+22. **Invoke API, display data in pagination, has Next and Previous buttons, and Includes a dropdown to choose how many records to show per page.**
+    [View Example](YOUR_URL_HERE)
+23. **Create a custom hook to resize the window size and show the height an width of window.**
+    [View Hook](YOUR_URL_HERE)
+24. **Write a custom debounce function. Create a function with console and call that in debounce function.**
+    [View Implementation](YOUR_URL_HERE)
+25. **Create a Timer and update it from 10 to 0? Can you create a custom countdown timer?**
+    [View Timer Component](YOUR_URL_HERE)
+26. **Create a custom hook for API call, which will accept the base url.**
+    [View Hook](YOUR_URL_HERE)
+27. **Implement "Load More" functionality and caching in React.**
+    [View Implementation](YOUR_URL_HERE)
+
+---
+
+## **Scenario-Based Coding Challenges**
+
+28. **Invoke API, Display first 10 album titles in a list with checkboxes, Upon selection of atleast 5 items, enable submit button, Capitalize second letter of every word in the title.**
+    [View Solution](YOUR_URL_HERE)
+29. **Create a Comments Analytics – Chart by Post Instructions:** Build a React + TypeScript application that visualizes comment distribution.
+    - The app must fetch posts and their comments.
+    - Display a chart (bar or pie) showing the number of comments per post.
+    - Use `useMemo` to compute counts efficiently when data changes.
+    - Desktop: chart + table side by side. Mobile: chart stacked above table.
+      [View Solution](YOUR_URL_HERE)
+30. **You are given a nested tree data structure. Each node has an optional id, an array of `classList`, and `children`. Write recursive functions to search nodes by id and by className.**
+    [View Solution](YOUR_URL_HERE)
+31. **Create a Todo List app where: You can add data. A Complete button is available for each task. On clicking the Complete button, the task is marked complete and the button becomes disabled.**
+    [View Solution](YOUR_URL_HERE)
+32. **Design a component with 3 tabs and implement pagination to handle large data in a tab.**
+    [View Solution](YOUR_URL_HERE)
+33. **Implement the Error boundaries in class component and show a error for a component.**
+    [View Implementation](YOUR_URL_HERE)
