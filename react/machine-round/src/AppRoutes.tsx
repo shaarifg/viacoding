@@ -1,13 +1,14 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Dashboard from "@/modules/pages/dashboard/Dashboard";
 import NoAuthGuard from "@/core/guards/NoAuthGuard";
-import AuthGuard from "@/core/guards/AuthGuard";
+import { AuthGuard } from "@/core/guards/AuthGuard";
 import { AuthRoutes } from "@/modules/auth/AuthRoutes";
 import { AppsRoutes } from "@/modules/apps/AppsRoutes";
-
+import { LayoutProvider } from "./context/LayoutContext";
+import Settings from "./core/layout/common/settings/Settings";
 
 const router = createBrowserRouter([
-    // home page
+  // home page
   {
     path: "",
     element: <h1>I am Home</h1>,
@@ -15,6 +16,13 @@ const router = createBrowserRouter([
   },
   {
     path: "apps",
+    element: (
+      <AuthGuard>
+        <LayoutProvider>
+          <Outlet />
+        </LayoutProvider>
+      </AuthGuard>
+    ),
     children: AppsRoutes,
   },
   {
@@ -24,7 +32,13 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <AuthGuard />,
+    element: (
+      <AuthGuard>
+        <LayoutProvider>
+          <Outlet />
+        </LayoutProvider>
+      </AuthGuard>
+    ),
     children: [{ path: "", element: <Dashboard /> }],
   },
 
