@@ -4,7 +4,7 @@ let todos = structuredClone(todosData);
 
 export const todoMockApi = {
   async getTodos() {
-    await new Promise((r) => setTimeout(r, 300)); // fake delay
+    await new Promise((r) => setTimeout(r, 1500)); // fake delay
     return structuredClone(todos);
   },
   async addTodo(title: string) {
@@ -18,7 +18,7 @@ export const todoMockApi = {
     return todo;
   },
   async deleteTodo(id: number) {
-    await new Promise((r) => setTimeout(r, 3000));
+    await new Promise((r) => setTimeout(r, 1000));
     todos = todos.filter((t) => t.id !== id);
     return true;
   },
