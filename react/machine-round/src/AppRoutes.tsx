@@ -4,8 +4,7 @@ import NoAuthGuard from "@/core/guards/NoAuthGuard";
 import { AuthGuard } from "@/core/guards/AuthGuard";
 import { AuthRoutes } from "@/modules/auth/AuthRoutes";
 import { AppsRoutes } from "@/modules/apps/AppsRoutes";
-import { LayoutProvider } from "./context/LayoutContext";
-import Settings from "./core/layout/common/settings/Settings";
+import { LayoutProvider } from "@/context/LayoutContext";
 
 const router = createBrowserRouter([
   // home page
