@@ -1,4 +1,4 @@
-# ⚛️ React & Web Development Interview Questions
+# React & Web Development Interview Questions
 
 As an expert document contributor, this file organizes key technical questions for documentation and learning, with links for deeper exploration.
 
@@ -56,7 +56,7 @@ As an expert document contributor, this file organizes key technical questions f
 ## **Performance, Tooling, and Debugging**
 
 16. **What techniques would you use to prevent layout shifts (CLS) and improve perceived performance in a React application?**
-    [Read More](YOUR_URL_HERE)
+    [Read More](http://remotephysios.com)
 17. **How will you debug any prod issue without writing logs?**
     [Read More](YOUR_URL_HERE)
 18. **What is Webpack? Benefit of using it?**
@@ -111,3 +111,45 @@ As an expert document contributor, this file organizes key technical questions f
     [View Solution](YOUR_URL_HERE)
 33. **Implement the Error boundaries in class component and show a error for a component.**
     [View Implementation](YOUR_URL_HERE)
+
+    ***
+
+## **Core React Concepts**
+
+34. **💭 What’s the difference between controlled and uncontrolled components?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+35. **⚙️ What really happens under the hood when you call `setState()`?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+36. **🧩 How does reconciliation work in React’s Virtual DOM?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+
+---
+
+## **Hooks Deep Dive**
+
+37. **🔁 When should you use `useCallback` vs `useMemo`?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+38. **🧹 How does the cleanup function in `useEffect` actually work?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+39. **⚡ Can you create a custom hook for fetching API data?**
+    [View Example (New Tab)](YOUR_URL_HERE)
+
+---
+
+## **Performance & State Management**
+
+40. **🧠 How do you handle expensive computations efficiently in React?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+41. **🎛️ When would you prefer Context API over Redux Toolkit?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+42. **⚡ How do you prevent unnecessary re-renders in large apps?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+
+---
+
+## **Testing**
+
+43. **🧩 What’s the difference between unit and integration tests in React?**
+    [Read More (New Tab)](YOUR_URL_HERE)
+44. **🧠 How do you test a component that fetches data using Jest + React Testing Library?**
+    [View Example (New Tab)](http://remotephysios.com)
