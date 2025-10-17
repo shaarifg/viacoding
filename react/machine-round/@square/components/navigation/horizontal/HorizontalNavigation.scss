@@ -1,0 +1,174 @@
+/* ───────────────────────────────
+   Root Navigation Styles
+──────────────────────────────────*/
+.square-horizontal-navigation-wrapper {
+    display: flex;
+    align-items: center;
+
+    /* Basic & Branch shared */
+    .square-horizontal-basic-item,
+    .square-horizontal-branch-item {
+        @screen sm {
+            &:hover {
+                .square-horizontal-item-wrapper {
+                    @apply bg-hover;
+                }
+            }
+        }
+
+        .square-horizontal-item-wrapper {
+            border-radius: 4px;
+            overflow: hidden;
+
+            .square-horizontal-item {
+                padding: 0 16px;
+                cursor: pointer;
+                user-select: none;
+
+                .square-horizontal-item-icon {
+                    margin-right: 12px;
+                }
+            }
+        }
+    }
+
+    /* Basic – Active link highlight */
+    .square-horizontal-basic-item {
+
+        .square-horizontal-item-active,
+        .square-horizontal-item-active-forced {
+            .square-horizontal-item-title {
+                @apply text-primary !important;
+            }
+
+            .square-horizontal-item-subtitle {
+                @apply text-primary-400 !important;
+
+                .dark & {
+                    @apply text-primary-600 !important;
+                }
+            }
+
+            .square-horizontal-item-icon {
+                @apply text-primary !important;
+            }
+        }
+    }
+
+    /* Branch – Menu open state */
+    .square-horizontal-branch-item {
+
+        .square-horizontal-menu-active,
+        .square-horizontal-menu-active-forced {
+            .square-horizontal-item-wrapper {
+                @apply bg-hover;
+            }
+        }
+    }
+
+    /* Spacer */
+    .square-horizontal-spacer-item {
+        margin: 12px 0;
+    }
+}
+
+/* ───────────────────────────────
+   Menu Panel (Dropdown)
+──────────────────────────────────*/
+.square-horizontal-menu {
+    .square-horizontal-menu-item {
+        height: auto;
+        min-height: 0;
+        line-height: normal;
+        white-space: normal;
+
+        /* Basic, Branch, Divider structure */
+        .square-horizontal-basic-item,
+        .square-horizontal-branch-item,
+        .square-horizontal-divider-item {
+            display: flex;
+            flex: 1 1 auto;
+        }
+
+        /* Divider */
+        .square-horizontal-divider-item {
+            margin: 8px -16px;
+
+            .square-horizontal-item-wrapper {
+                height: 1px;
+                box-shadow: 0 1px 0 0;
+            }
+        }
+    }
+}
+
+/* ───────────────────────────────
+   Common Menu Item Styles
+──────────────────────────────────*/
+.square-horizontal-menu-item {
+
+    /* Basic – Active link highlight */
+    .square-horizontal-basic-item {
+
+        .square-horizontal-item-active,
+        .square-horizontal-item-active-forced {
+            .square-horizontal-item-title {
+                @apply text-primary !important;
+            }
+
+            .square-horizontal-item-subtitle {
+                @apply text-primary-400 !important;
+
+                .dark & {
+                    @apply text-primary-600 !important;
+                }
+            }
+
+            .square-horizontal-item-icon {
+                @apply text-primary !important;
+            }
+        }
+    }
+
+    .square-horizontal-item-wrapper {
+        width: 100%;
+
+        &.square-horizontal-item-has-subtitle {
+            .square-horizontal-item {
+                min-height: 56px;
+            }
+        }
+
+        .square-horizontal-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 48px;
+            width: 100%;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+
+            .square-horizontal-item-title-wrapper {
+                .square-horizontal-item-subtitle {
+                    font-size: 12px;
+                }
+            }
+
+            .square-horizontal-item-badge {
+                margin-left: auto;
+
+                .square-horizontal-item-badge-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 10px;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

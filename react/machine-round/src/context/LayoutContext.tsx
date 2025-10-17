@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { DefaultLayout } from "@/core/layout/layouts/DefaultLayout";
 import { CompactLayout } from "@/core/layout/layouts/CompactLayout";
 import { ModernLayout } from "@/core/layout/layouts/ModernLayout";
+import Settings from "@/core/layout/common/settings/Settings";
 
 const LAYOUTS: Record<string, React.FC<{ children: React.ReactNode }>> = {
   default: DefaultLayout,
@@ -23,6 +24,7 @@ export const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <LayoutContext.Provider value={{ layout, setLayout }}>
       <Layout>{children}</Layout>
+      <Settings />
     </LayoutContext.Provider>
   );
 };
