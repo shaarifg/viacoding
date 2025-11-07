@@ -6,6 +6,23 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="visual">
+      <ul>
+        <li>
+          phase before code runs: Function declarations getName are fully
+          hoisted name + body. var declarations x
+        </li>
+        sayHello are hoisted as 'undefined'. let/const NOT accessible yet TDZ. ,
+        <li>
+          Execution phase code runs top-to-bottom: console.loggetName prints the
+          function object. getName can be called anywhere because it's hoisted.
+          var x gets assigned 7 when execution reaches that line. function
+          expressions assigned to var are assigned at runtime. , "State after
+          hoisting and before execution: " getName -> [function] " x ->
+          undefined sayHello -> undefined
+        </li>
+      </ul>
+    </div>
     <script src="./hoisting.js"></script>
   </body>
 </html>
