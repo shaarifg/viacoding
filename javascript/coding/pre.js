@@ -105,3 +105,45 @@ nestedCallbacks((result) => console.log("callback hell result:", result));
 // - Converting to Promises flattens chaining (.then/.catch) and centralizes error handling.
 // - async/await makes Promise-based code look synchronous and easier to follow.
 // - Race conditions occur when multiple async operations interact with shared state and the order of completion affects correctness; avoid by coordinating (locks, sequencing, atomic updates, or using immutability).
+
+// --- setImmediate (Node.js) explanation + examples ---
+// setImmediate schedules a callback to run on the "check" phase of Node's event loop,
+// i.e. after I/O callbacks. It's Node-specific (not available in browsers).
+// process.nextTick() runs before setImmediate and setTimeout.
+// The ordering between setImmediate and setTimeout(..., 0) can vary:
+// - When scheduled from the main module, setTimeout(..., 0) often runs before setImmediate.
+// - When scheduled from an I/O callback, setImmediate will run before setTimeout(..., 0).
+
+// Simple demo showing nextTick -> (setTimeout / setImmediate ordering may vary)
+function demoImmediateSimple() {
+  console.log("demoImmediateSimple: start");
+
+  setTimeout(() => console.log("demoImmediateSimple: setTimeout 0"), 0);
+
+  setImmediate(() => console.log("demoImmediateSimple: setImmediate"));
+
+  process.nextTick(() => console.log("demoImmediateSimple: process.nextTick"));
+
+  console.log("demoImmediateSimple: end");
+}
+demoImmediateSimple();
+
+// Demo showing deterministic ordering when invoked from an I/O callback
+// (setImmediate runs before setTimeout(0) when scheduled inside an I/O callback)
+const fs = require("fs");
+function demoImmediateInIO() {
+  fs.readFile(__filename, () => {
+    console.log("\ndemoImmediateInIO: inside I/O callback");
+
+    setTimeout(() => console.log("demoImmediateInIO: setTimeout 0"), 0);
+
+    setImmediate(() => console.log("demoImmediateInIO: setImmediate"));
+
+    process.nextTick(() => console.log("demoImmediateInIO: process.nextTick"));
+  });
+}
+demoImmediateInIO();
+
+// Notes:
+// - Use setImmediate when you want a callback to run asynchronously after I/O events.
+// - Avoid relying on a specific ordering between setTimeout(..., 0) and setImmediate in general code.

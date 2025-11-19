@@ -6,13 +6,14 @@ const Search = () => {
 
   // ─── Trigger API call only after user stops typing ───
   useEffect(() => {
-    const hander = setTimeout(() => {
+    //
+    const intervalId = setTimeout(() => {
       setDebaounceValue(search);
     }, 1000); // wait for 1 sec if user stop typing
 
     // every time user start type without waiting for one sec, clear above setTimeout
     return () => {
-      clearTimeout(hander);
+      clearTimeout(intervalId);
     };
   }, [search]);
 
