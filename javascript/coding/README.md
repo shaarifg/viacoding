@@ -1,201 +1,256 @@
-# JavaScript Coding Interview Questions (Code-Only)
+# JavaScript Coding Interview Questions (Grouped + FAANG-Level)
+
+> **Pure coding interview questions. Grouped. Updated. Includes sample explanations where needed.**
+
+---
+
+## 🟦 1. Object & Data Structure Manipulation
 
 ### 1. Flatten a deeply nested object
 
-### 2. Unflatten a flattened object back to nested form
+**Sample explanation:** Convert `{ a: { b: { c: 1 } } }` → `{ 'a.b.c': 1 }`.
 
-### 3. Deep clone an object without `JSON.parse`
+### 2. Unflatten an object
 
-### 4. Implement your own `Promise.all`
+Convert flattened paths back into nested object.
 
-### 5. Implement your own `Promise.race`
+### 3. Deep clone an object (without `JSON.parse`)
 
-### 6. Implement your own `Promise.any`
+### 4. Detect circular references in objects
 
-### 7. Create a custom `bind` function
+### 5. Deep equality check between two objects
 
-### 8. Create a custom `call` function
+### 6. Implement `Object.create` polyfill
 
-### 9. Create a custom `apply` function
+### 7. Implement `Object.assign` polyfill
 
-### 10. Implement a debounce function
+### 8. Implement lodash-like `get(object, path)`
 
-### 11. Implement a throttle function
+### 9. Implement lodash-like `set(object, path, value)`
 
-### 12. Convert nested arrays into a single flat array
+### 10. Implement lodash-like `merge` (deep merge)
 
-### 13. Convert a flat array with IDs & parentIDs into a tree
+### 11. Group array of objects by key
 
-### 14. Memoize any given function
+### 12. Chunk an array into smaller arrays
 
-### 15. Implement a simple `EventEmitter`
+### 13. Convert flat array with parentId into a tree
 
-### 16. Implement a publish–subscribe (Pub/Sub) system
+**Explanation:** Convert:
 
-### 17. Implement a caching function with TTL
+```js
+[{ id: 1 }, { id: 2, parentId: 1 }, { id: 3, parentId: 2 }];
+```
 
-### 18. Convert a callback-style function into a Promise (promisify)
+into nested tree.
 
-### 19. Implement your own deep equality check
+### 14. Flatten a tree into an array
 
-### 20. Implement your own version of `Array.map`
+### 15. Count occurrences of words in a string
 
-### 21. Implement your own version of `Array.filter`
+### 16. Reverse words in a sentence
 
-### 22. Implement your own version of `Array.reduce`
+### 17. Find duplicates in an array
 
-### 23. Implement function currying
+---
 
-### 24. Implement infinite currying (`sum(1)(2)(3)() → 6`)
+## 🟪 2. Functional Programming & Custom Polyfills
 
-### 25. Implement partial application
+### 18. Implement custom `map` method
 
-### 26. Implement lazy evaluation for chained methods
+### 19. Implement custom `filter`
 
-### 27. Implement a pipe function
+### 20. Implement custom `reduce`
 
-### 28. Implement a compose function
+### 21. Implement function currying
 
-### 29. Implement a retry mechanism for async functions
+Example: `sum(1)(2)(3)() → 6`
 
-### 30. Limit concurrency of async tasks
+### 22. Infinite currying
 
-### 31. Implement `setInterval` using `setTimeout`
+### 23. Partial application
 
-### 32. Implement `setTimeout` using `setInterval`
+### 24. Implement `compose`
 
-### 33. Implement a scheduler that runs tasks sequentially
+### 25. Implement `pipe`
 
-### 34. Implement a scheduler that runs tasks in parallel with limit
+### 26. Lazy evaluation pipeline
 
-### 35. Detect circular references in objects
+### 27. Memoize a function
 
-### 36. Generate all permutations of an array
+---
 
-### 37. Generate all combinations of an array
+## 🟥 3. Promises, Async, Concurrency
 
-### 38. Implement binary search
+### 28. Implement `Promise.all`
 
-### 39. Implement merge sort
+### 29. Implement `Promise.race`
 
-### 40. Implement quick sort
+### 30. Implement `Promise.any`
 
-### 41. Implement an LRU Cache from scratch
+### 31. Convert callback-based function to Promise (promisify)
 
-### 42. Implement a debounce with immediate execution option
+### 32. Retry mechanism for async function
 
-### 43. Implement a throttle with trailing and leading options
+### 33. Exponential backoff retry
 
-### 44. Convert RGB to HEX
+### 34. Limit concurrency of async tasks
 
-### 45. Convert HEX to RGB
+### 35. Sequential task executor
 
-### 46. Create a function that checks if brackets are balanced
+### 36. Parallel executor with max limit
 
-### 47. Implement a function that returns the first non-repeating character
+### 37. Debounce (sync)
 
-### 48. Implement a function to find duplicates in an array
+### 38. Debounce for async fetch
 
-### 49. Implement a deep freeze function
+### 39. Throttle with leading/trailing behavior
 
-### 50. Implement a function to flatten a tree into an array
+### 40. `setInterval` using `setTimeout`
 
-### 51. Implement a function to group array items by key
+### 41. `setTimeout` using `setInterval`
 
-### 52. Implement a function to chunk an array into smaller arrays
+### 42. Promise timeout wrapper
 
-### 53. Implement a function to shuffle an array (Fisher-Yates)
+### 43. Time-based key-value store (TTL)
 
-### 54. Implement a function to find longest substring without repeating characters
+### 44. Implement microtask scheduler
 
-### 55. Implement a function to reverse words in a sentence
+### 45. Implement macrotask scheduler
 
-### 56. Implement a function to check if two strings are anagrams
+---
 
-### 57. Create a simple DOM diff algorithm (virtual DOM style)
+## 🟧 4. Algorithms & Data Structures
 
-### 58. Implement a polyfill for `Object.create`
+### 46. Binary search
 
-### 59. Implement a polyfill for `Object.assign`
+### 47. Merge sort
 
-### 60. Implement a polyfill for `Array.isArray`
+### 48. Quick sort
 
-### 61. Implement your own version of `new` keyword
+### 49. Generate all permutations of an array
 
-### 62. Implement your own version of `instanceof`
+### 50. Generate all combinations of an array
 
-### 63. Implement a function to flatten promises (promise chaining)
+### 51. BFS on tree/graph
 
-### 64. Implement a basic reactive system (like Vue reactivity)
+### 52. DFS on tree/graph
 
-### 65. Implement a priority queue
+### 53. Inorder, preorder, postorder traversal
 
-### 66. Implement a min-heap
+### 54. Implement min-heap
 
-### 67. Implement a max-heap
+### 55. Implement max-heap
 
-### 68. Implement a basic HashMap class in JS
+### 56. Priority queue
 
-### 69. Implement a simple version of Redux store
+### 57. LRU Cache
 
-### 70. Implement a middleware chain executor
+### 58. Detect longest substring without repeating characters
 
-### 71. Create a function that returns a random UUID
+**Explanation:** Classic sliding window problem.
 
-### 72. Implement a function to debounce multiple functions separately
+### 59. Rotate array by k positions
 
-### 73. Implement a time-based key-value store
+### 60. Shuffle array (Fisher-Yates)
 
-### 74. Implement a simple router (SPA routing)
+### 61. First non-repeating character
 
-### 75. Implement a promise timeout wrapper
+### 62. Balanced brackets checker
 
-### 76. Implement a function that retries promise until successful (infinite retry)
+### 63. Palindrome substring finder
 
-### 77. Implement a function to detect palindrome substring
+---
 
-### 78. Implement a function to rotate an array by k positions
+## 🟩 5. Event Systems & Architecture Patterns
 
-### 79. Implement a function to count occurrences of each word in a string
+### 64. Implement EventEmitter
 
-### 80. Implement a simple in-memory database class
+### 65. Implement Publish/Subscribe pattern
 
-### 81. Implement an async executor that runs tasks sequentially
+### 66. Middleware chain executor (Redux-style)
 
-### 82. Implement a simple template engine (e.g., `"Hello {{name}}"`)
+### 67. Create simple Redux store clone
 
-### 83. Implement a JSON parser (basic)
+### 68. Build a basic reactive system (Vue-style reactivity)
 
-### 84. Implement a clone of lodash `get`
+### 69. Job queue implementation
 
-### 85. Implement a clone of lodash `set`
+### 70. Async lazy loader
 
-### 86. Implement a clone of lodash `merge`
+---
 
-### 87. Implement your own observer pattern
+## 🟨 6. Browser, DOM, Utilities
 
-### 88. Implement a function that performs deep search in nested arrays
+### 71. Simple router for SPA
 
-### 89. Implement a binary tree traversal (inorder, preorder, postorder)
+### 72. DOM diff algorithm (virtual DOM style)
 
-### 90. Implement BFS (breadth-first search)
+### 73. Event delegation utility
 
-### 91. Implement DFS (depth-first search)
+### 74. RGB ↔ HEX conversion
 
-### 92. Implement a debounce for async fetch calls
+### 75. Generate random UUID
 
-### 93. Implement a function to limit API calls (rate limiter)
+### 76. Rate limiter for API calls
 
-### 94. Implement exponential backoff retry
+### 77. Infinite scroll throttle (browser)
 
-### 95. Implement a job queue
+---
 
-### 96. Implement an asynchronous lazy loader
+# 🔥 FAANG-Level Coding Questions (High Difficulty)
 
-### 97. Implement random number generator with seed
+These are the ones FAANG repeatedly asks in interviews.
 
-### 98. Implement an event delegation utility
+## 🟥 FAANG — Must-Solve
 
-### 99. Implement your own microtask scheduler
+### 1. Implement `Promise.all` (from scratch)
 
-### 100. Implement your own macro task scheduler
+### 2. Implement deep clone with circular reference detection
+
+### 3. Longest substring without repeating characters (O(n))
+
+### 4. Convert a flat array into a tree (high-frequency)
+
+### 5. LRU Cache (Map + Doubly Linked List)
+
+### 6. Implement currying with infinite arguments
+
+### 7. Scheduler that runs tasks with concurrency limit
+
+### 8. Implement debounce + throttle combined version
+
+### 9. Implement a priority queue
+
+### 10. Merge k sorted arrays
+
+### 11. Implement memoization with cache invalidation TTL
+
+### 12. Implement your own version of Redux store
+
+### 13. Create a deep comparison function that handles edge cases
+
+### 14. Design a Pub/Sub system with wildcard channels
+
+### 15. Create async pipeline processor (`composeAsync`)
+
+### 16. Implement virtual DOM diffing (simplified)
+
+### 17. Implement a basic Reactivity system using Proxies
+
+### 18. Implement `instanceof` operator logic
+
+### 19. Write async retry with exponential backoff
+
+### 20. Implement your own microtask queue
+
+---
+
+If you want:
+
+- **Solutions for all**
+- **FAANG-only set with full code**
+- **Difficulty labels + expected time complexity**
+- **A separate `solutions.md` file**
+
+Tell me and I will generate it.
